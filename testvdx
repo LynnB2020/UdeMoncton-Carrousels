@@ -1,0 +1,18 @@
+{
+  "names" : [
+    {
+      "value" : "VDX Link",
+      "key" : "fr_CA"
+    },
+    {
+      "value" : "VDX Link",
+      "key" : "en_US"
+    }
+  ],
+  "description" : "Custom, SD, 2021. Adds link to Search results display to direct users to Requests page. ",
+  "entryCode" : "VDX_LINK",
+  "type" : "SCRIPT",
+  "customJavaScript" : "function goToVDX () {\r\nvar profile = com_sirsi_ent_page.friendlyUrl;\r\nvar lang = com_sirsi_ent_page.localeCode;\r\n\r\n\r\n\tvar continueLinkFR_CA = '<p style=\"font-size:16px;text-align:center;padding-top:5px;color:#32CD32;font-weight: bold;\">Le livre n'est pas disponible à VOTRE bibliothèque. Faites une demande de <a style=\"font-weight: bold;\" href=\"https://biblio.vdxhost.com/fr/zportal/zengine?VDXaction=Navigation\"> prêt entre bibliothèques<\/a>.<\/p>';\r\n\r\n\tvar continueLinkEN_US = '<p style=\"font-size:16px;text-align:center;padding-top:5px;color:#32CD32;font-weight: bold;\">The book is not available at YOUR library. Request an <a style=\"font-weight: bold;\" href=\"https://biblio.vdxhost.com/en/zportal/zengine?VDXaction=Navigation\" target=\"_blank\">Interlibrary Loan<\/a>.<\/p>';\r\n\r\n\r\n\r\nif (lang === 'fr_CA') {\r\n$J('#quicksearchWrapper').prepend(continueLinkFR_CA);\r\n}\r\nelse {\r\n\t$J('#quicksearchWrapper').prepend(continueLinkEN_US);\r\n}\r\n}",
+  "compatibility" : "DESKTOP_AND_MOBILE",
+  "boundFunction" : "goToVDX"
+}
